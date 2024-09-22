@@ -11,6 +11,7 @@ build:
   script:
     - pnpm install # install dependencies
     - pnpm run docs:build
+    - mv .vitepress/dist public
   cache:
     key:
       files:
