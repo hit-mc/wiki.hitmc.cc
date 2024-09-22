@@ -23,3 +23,28 @@ build:
       - public
   # only:
   #   - main
+pages:
+  stage: deploy
+  image: node:18.17.1
+  script:
+    - echo 'Deploying'
+  dependencies:
+    - build
+  artifacts:
+    paths:
+      - public
+  # only:
+  #   - masters
+  # rules:
+  #   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  #     when: always
+  #   - if: $CI_COMMIT_TAG
+  #     when: always
+  #   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_COMMIT_TAG
+  #     when: never
+  #   - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH && $CI_COMMIT_TAG
+  #     when: never
+  #   - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH && !$CI_COMMIT_TAG
+  #     when: never
+  #   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && !$CI_COMMIT_TAG
+  #     when: always
