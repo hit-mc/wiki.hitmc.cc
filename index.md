@@ -20,20 +20,18 @@ features:
         <a href="https://hitmc.cc">https://hitmc.cc</a><br>
   - title: 【原版】1.21
     details:
-        <div class="index-tags">
-          <code class="index-tag">1.21</code>
-          <code class="index-tag">carpet</code>
-          <code class="index-tag">fabric</code>
-        </div>
-        # <a href="https://www.minecraft.net/zh-hans">Minecraft 官网</a><br>
+        <span class="index-tags">
+          <span class="index-tag">1.21</span>
+          <span class="index-tag">carpet</span>
+          <span class="index-tag">fabric</span>
+        </span>
   - title: 【MOD】海上机械师
     details:
-        # <a href="https://www.minecraft.net/zh-hans">Minecraft 官网</a><br>
-        <div class="index-tags">
-          <code class="index-tag">海岛生存</code>
-          <code class="index-tag">机械动力</code>
-          <code class="index-tag">瓦尔基里</code>
-        </div>
+        <span class="index-tags">
+          <span class="index-tag">海岛生存</span>
+          <span class="index-tag">机械动力</span>
+          <span class="index-tag">瓦尔基里</span>
+        </span>
   - title: 【建筑】我的哈工大
     details:
         <a href="/servers/myhit/index">介绍</a><br>
@@ -52,6 +50,9 @@ features:
     margin-right: 4px;
     border-radius: 4px;
     border: 1px solid #eaeaea;
-    font-size: 12px!important;
+    font-size: 12px;
+    line-height: 12px;
+    /* width: fit-content; */
+    display: inline-block;
   }
 </style>
