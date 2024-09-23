@@ -6,7 +6,7 @@ on:
   # Runs on pushes targeting the `main` branch. Change this to `master` if you're
   # using the `master` branch as the default branch.
   push:
-    branches: [master]
+    branches: [deploy]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -37,7 +37,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18.17.1 # Match the Node.js version from your original configuration
-          cache: 'pnpm' # Set cache for pnpm
+          # cache: 'pnpm' # Set cache for pnpm
 
       - name: Setup pnpm
         run: |
@@ -56,7 +56,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/.vitepress/dist # Make sure this path matches your actual output directory
+          path: .vitepress/dist # Make sure this path matches your actual output directory
 
   # Deployment job
   deploy:
