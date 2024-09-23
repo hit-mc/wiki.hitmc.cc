@@ -24,6 +24,7 @@ features:
           <span class="index-tag">1.21</span>
           <span class="index-tag">carpet</span>
           <span class="index-tag">fabric</span>
+          <span class="index-tag">生存</span>
         </span>
   - title: 【MOD】海上机械师
     details:
