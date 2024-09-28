@@ -1,4 +1,6 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress';
+import sidebarVan121 from './sidebars/van121.mts';
+import sidebarBlog from './sidebars/blog.mts';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -14,37 +16,18 @@ export default defineConfig({
             { text: '原版生存', link: '/servers/van121/' },
             { text: '海上机械师', link: '/servers/haishangjiexieshi/' },
             { text: '我的哈工大', link: '/servers/myhit/' },
+            { text: '历史周目', link: '/servers/old/' },
+            { text: '博客', link: '/blog/' },
             { text: '关于', link: '/about' },
         ],
 
         sidebar: {
-            "/servers/van121/": [
-                {
-                    text: '介绍',
-                    items: [
-                        { text: '介绍', link: '/servers/van121/index' },
-                        { text: '商店', link: '/servers/van121/store' },
-                    ]
-                },
-                {
-                    text: '工程', // 实用性 > 美观性
-                    items: [
-                        // { text: '介绍', link: '/markdown-examples' },
-                    ]
-                },
-                {
-                    text: '奇观', // 美观性 > 实用性
-                    items: [
-                        // { text: '介绍', link: '/markdown-examples' },
-                    ]
-                },
-            ],
+            "/servers/van121/": sidebarVan121,
+            '/blog/': sidebarBlog,
             "/servers/old/": [
                 {
                     text: 'Examples',
                     items: [
-                        { text: 'Markdown Examples', link: '/markdown-examples' },
-                        { text: 'Runtime API Examples', link: '/api-examples' }
                     ]
                 }
             ],
