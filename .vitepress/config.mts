@@ -14,23 +14,17 @@ export default defineConfig({
         nav: [
             { text: '首页', link: '/' },
             { text: '原版生存', link: '/servers/van121/' },
-            { text: '海上机械师', link: '/servers/haishangjiexieshi/' },
+            { text: '海上机械师', link: '/servers/haishangjixieshi/' },
             { text: '我的哈工大', link: '/servers/myhit/' },
             { text: '历史周目', link: '/servers/old/' },
-            { text: '博客', link: '/blog/' },
-            { text: '关于', link: '/about' },
+            { text: '博客&关于', link: '/blog/' },
+            // { text: '关于', link: '/about' },
         ],
 
         sidebar: {
             "/servers/van121/": sidebarVan121,
             '/blog/': sidebarBlog,
-            "/servers/old/": [
-                {
-                    text: 'Examples',
-                    items: [
-                    ]
-                }
-            ],
+            "/servers/old/": [],
             "/about": [
                 {
                     items: [

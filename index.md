@@ -12,13 +12,15 @@ hero:
       link: https://hitmc.cc
     - theme: alt
       text: 关于我们
-      link: /about
+      link: /blog
 
 features:
   - title: 【皮肤站】外置登录
+    link: https://hitmc.cc
     details:
         <a href="https://hitmc.cc">https://hitmc.cc</a><br>
   - title: 【原版】1.21
+    link: /servers/van121/
     details:
         <span class="index-tags">
           <span class="index-tag">1.21</span>
@@ -27,6 +29,7 @@ features:
           <span class="index-tag">生存</span>
         </span>
   - title: 【MOD】海上机械师
+    link: /servers/haishangjixieshi/
     details:
         <span class="index-tags">
           <span class="index-tag">海岛生存</span>
@@ -34,6 +37,7 @@ features:
           <span class="index-tag">瓦尔基里</span>
         </span>
   - title: 【建筑】我的哈工大
+    link: /servers/myhit/
     details:
         <a href="/servers/myhit/index">介绍</a><br>
 

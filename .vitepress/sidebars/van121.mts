@@ -7,8 +7,8 @@ const sidebars: DefaultTheme.SidebarItem[] = [
     {
         text: '介绍',
         items: [
-            { text: '介绍', link: root`/` },
-            { text: '商店', link: root`/store` },
+            { text: '服务器介绍', link: root`/` },
+            { text: '村民交易所', link: root`/store` },
         ]
     },
     {
