@@ -5,6 +5,9 @@ export default defineConfig({
     title: "HITMC Wiki",
     description: "A wiki site for hitmc",
     themeConfig: {
+        outline: {
+            level: [2, 4],
+        },
         // https://vitepress.dev/reference/default-theme-config
         nav: [
             { text: '首页', link: '/' },
@@ -19,7 +22,8 @@ export default defineConfig({
                 {
                     text: '介绍',
                     items: [
-                        { text: '介绍', link: '/markdown-examples' },
+                        { text: '介绍', link: '/servers/van121/index' },
+                        { text: '商店', link: '/servers/van121/store' },
                     ]
                 },
                 {
