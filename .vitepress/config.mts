@@ -17,8 +17,8 @@ export default defineConfig({
             { text: '海上机械师', link: '/servers/haishangjixieshi/' },
             { text: '我的哈工大', link: '/servers/myhit/' },
             { text: '历史周目', link: '/servers/old/' },
-            { text: '博客&关于', link: '/blog/' },
-            // { text: '关于', link: '/about' },
+            { text: '博客', link: '/blog/' },
+            { text: '关于', link: '/blog/' },
         ],
 
         sidebar: {
