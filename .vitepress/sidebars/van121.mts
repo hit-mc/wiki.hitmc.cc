@@ -9,6 +9,8 @@ const sidebars: DefaultTheme.SidebarItem[] = [
         items: [
             { text: '服务器介绍', link: root`/` },
             { text: '村民交易所', link: root`/store` },
+            { text: '服务器端 mod', link: root`/server-mods` },
+            { text: 'carpet 模组选项', link: root`/server-mods-carpet` },
         ]
     },
     {
