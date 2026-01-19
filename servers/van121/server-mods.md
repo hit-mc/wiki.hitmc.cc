@@ -35,3 +35,8 @@
 - Ledger  查熊
 - Luckperms  权限配置
 - Spark  服务器性能检测 mod
+
+## 未来计划增加：
+- Syncmatica  共享原理图
+- Ledger database  查熊数据库
+- Prometheus-Exporter  图形化性能检测
