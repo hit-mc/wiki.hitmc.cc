@@ -9,17 +9,22 @@
 | 地址                      | 地域      | 当前状态 | 备注                           |
 | :------------------------ | :-------- | :------- | :----------------------------- |
 | ~~`localhost:25571`~~         | ~~内网~~      | ~~TODO~~     | ~~仅供记录~~                       |
-| `bj.van121.hitmc.cc`      | 公网-北京 | TODO     | 北京（及临近地区）推荐使用     |
-| `sz.van121.hitmc.cc`      | 公网-深圳 | TODO     | 深圳（及临近地区）推荐使用     |
-| `gd.van121.hitmc.cc`      | 公网-河源 | TODO     | 广东河源（及临近地区）推荐使用 |
-| `local.van121.hitmc.cc`   | 校内-本部 | TODO     | 本部校区校园网推荐使用         |
-| `szlocal.van121.hitmc.cc` | 校内-深圳 | TODO     | 深圳校区校园网推荐使用         |
+| `bj.van.hitmc.cc`      | 公网-北京 | Online     | 北京（及临近地区）推荐使用     |
+| `bj2.van.hitmc.cc`      | 公网-北京 | Online     | 北京（及临近地区）推荐使用     |
+| `sz.van.hitmc.cc`      | 公网-深圳 | TODO     | 深圳（及临近地区）推荐使用     |
+| `gd.van.hitmc.cc`      | 公网-河源 | TODO     | 广东河源（及临近地区）推荐使用 |
+| `local.van.hitmc.cc`   | 校内-本部 | Online     | 本部校区校园网推荐使用         |
+| `szlocal.van.hitmc.cc` | 校内-深圳 | TODO     | 深圳校区校园网推荐使用         |
 
 ### 周边服务
 
 **bluemap 网页地图**
 
-https://van121.map.hitmc.cc/
+https://van.map.hitmc.cc/
+
+**地铁图**
+
+https://metro.hitmc.cc/
 
 **村民交易所记录**
 
@@ -31,8 +36,6 @@ https://van121.map.hitmc.cc/
 
 **相册**
 
-TODO
+目前可查阅群相册
 
-**地铁图**
 
-TODO
