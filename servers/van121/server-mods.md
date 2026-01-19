@@ -18,6 +18,7 @@
 - Silk  前置
 - Fabric api  前置，请输入文本
 - fabric-language-kotlin 前置
+- collective  连锁砍树前置
 
 ## 性能优化类 MOD
 
@@ -29,6 +30,7 @@
 
 - Jade  请输入文本，为客户端安装的玩家提供支持
 - Quickshulker  快捷潜影盒等
+- tree harvester  下蹲连锁砍树
 
 ## 管理类 MOD
 
