@@ -1,20 +1,24 @@
 # carpet 模组选项
 
-服务器上 carpet 相关模组有四个，分别是
+以下是服务器上 carpet 相关模组
 
-| 模组文件名                                        | 名称                     | mcmod                                        | GitHub                                                  | 规则说明                                                                         |
-| ------------------------------------------------- | ------------------------ | -------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `fabric-carpet-1.21-1.4.147+v240613.jar`          | Carpet 本体模组          | [link](https://www.mcmod.cn/class/2361.html) | [link](https://github.com/gnembon/fabric-carpet)        | [link](https://github.com/gnembon/fabric-carpet/wiki/Current-Available-Settings) |
-| `carpet-extra-1.21-1.4.147.jar`                   | Carpet 扩展              | [link](https://www.mcmod.cn/class/3325.html) | [link](https://github.com/gnembon/carpet-extra)         | [link](https://github.com/gnembon/carpet-extra)                                  |
-| `carpet-tis-addition-v1.63.1-mc1.21.1.jar`        | Carpet TIS Addition      | [link](https://www.mcmod.cn/class/5664.html) | [link](https://github.com/TISUnion/Carpet-TIS-Addition) | [link](https://carpet.tis.world/zh-Hans/docs/rules)                                    |
-| `gugle-carpet-addition-mc1.21-2.9.0+build.52.jar` | [GCA]Gugle的Carpet附加包 | [link](https://www.mcmod.cn/class/7305.html) | [link](https://github.com/Gu-ZT/gugle-carpet-addition)  | [link](https://github.com/Gu-ZT/gugle-carpet-addition)                           |
+| 名称                     | mcmod                                        | GitHub                                                  | 规则说明                                                                         |
+| ------------------------ | -------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Carpet 本体模组          | [link](https://www.mcmod.cn/class/2361.html) | [link](https://github.com/gnembon/fabric-carpet)        | [link](https://github.com/gnembon/fabric-carpet/wiki/Current-Available-Settings) |
+| Carpet 扩展              | [link](https://www.mcmod.cn/class/3325.html) | [link](https://github.com/gnembon/carpet-extra)         | [link](https://github.com/gnembon/carpet-extra)                                  |
+| Carpet TIS Addition      | [link](https://www.mcmod.cn/class/5664.html) | [link](https://github.com/TISUnion/Carpet-TIS-Addition) | [link](https://carpet.tis.world/zh-Hans/docs/rules)                                    |
+| [GCA]Gugle的Carpet附加包 | [link](https://www.mcmod.cn/class/7305.html) | [link](https://github.com/Gu-ZT/gugle-carpet-addition)  | [link](https://github.com/Gu-ZT/gugle-carpet-addition)                           |
+| Essential Addons         | [link](https://www.mcmod.cn/class/4975.html) | [link](https://github.com/Gu-ZT/gugle-carpet-addition)  | [link](https://github.com/Super-Santa/EssentialAddons)                           |
 
 可以在**规则说明**中找到该 mod 官方的选项文档。
 
 如果你觉得有任何值得打开的选项，可以联系管理打开。
 
+**需要注意的是，在2026年1月19日对原版服升至 1.21.11 版本的更新中，由于 carpet extra 未更新，并没有加入该 mod**
+
 - 优化类（体验优化/服务器优化）不影响平衡性的，无冲突则可以直接打开
 - 可能会影响平衡性的投票等决定是否打开
+- 下面未列出的配置项通常保持默认设置
 
 ## 目前开启的配置选项
 
@@ -103,7 +107,7 @@
 > 1. **服务器和客户端双向设置**: 此选项在服务器和客户端两边都设置为 `true` 才能正常工作。如果只在服务器端设置，没有任何效果。
 > 2. **本地效果**: 如果只在客户端设置为 `true`，玩家仍然可以通过使用一些技巧（例如通过活板门）进入方块，但效果不完全。
 
-#### `renewableDeepslate false`
+#### `renewableDeepslate true`
 
 `carpet`
 
