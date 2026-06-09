@@ -14,9 +14,9 @@ const sidebars: DefaultTheme.SidebarItem[] = [
     {
         text: '玩家',
         items: [
-            { text: 'HITMC入服指南', link: root`/join` },
+            { text: 'HITMC入服指南', link: root`/join/join` },
             { text: 'Ledger 操作指南', link: root`/player-ledger` },
-            { text: '服务器地图迁移指南', link: root`/map_migration` },
+            { text: '服务器地图迁移指南', link: root`/map_migration/map_migration` },
         ],
     },
     {
@@ -24,6 +24,7 @@ const sidebars: DefaultTheme.SidebarItem[] = [
         items: [
             { text: 'Ledger 操作指南', link: root`/op-ledger` },
             { text: 'LuckPerms 操作指南', link: root`/op-luckPerms` },
+            { text: 'HITMC 运维入门指南', link: root`/HITMC_Ops_Post/HITMC_Ops_Post` },
         ],
     },
 ];
