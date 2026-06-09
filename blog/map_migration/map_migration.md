@@ -13,26 +13,26 @@ HighIQ666
 以下以 PCL 和 HMCL 启动器为例，其他启动器操作逻辑类似，找到对应功能按钮即可，也可直接通过资源管理器查找。
 
 #### PCL 启动器
-![img](./map_migration_image/map1.png)
-![img](./map_migration_image/map2.png)
+![img](./map1.png)
+![img](./map2.png)
 
 点击对应按钮即可打开游戏根目录。
 
 #### HMCL 启动器
-![img](./map_migration_image/map3.png)
-![img](./map_migration_image/map4.png)
+![img](./map3.png)
+![img](./map4.png)
 
 点击对应按钮即可打开根目录。
 
 ### 2. 找到地图根目录
 以下以 xaero 地图为例，其他地图 mod 可查询对应百科找到存放目录。
 
-![img](./map_migration_image/map5.png)
+![img](./map5.png)
 
 打开后，若同时安装了 xaero 的小地图与世界地图，会出现两个文件夹：`minimap`（小地图）和 `world-map`（世界地图），两者操作原理一致，均需进行复制替换。
 
 以 `world-map` 文件夹为例：
-![img](./map_migration_image/map6.png)
+![img](./map6.png)
 
 - 带有 `multiplayer` 前缀的文件夹为多人服务器的地图数据
 - 不带 `multiplayer` 前缀的文件夹为单人游戏数据
