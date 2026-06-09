@@ -43,10 +43,18 @@ features:
           <span class="index-tag">机械动力</span>
           <span class="index-tag">农夫乐事</span>
         </span>
-  - title: 【建筑】我的哈工大
-    link: /servers/myhit/
+  - title: 【Kit】插件服
+    link: /servers/Kit_servers/
     details:
-        <a href="/servers/myhit/index">介绍</a><br>
+        <span class="index-tags">
+          <span class="index-tag">Velocity</span>
+          <span class="index-tag">玩法多样</span>
+          <span class="index-tag">小游戏派对</span>
+        </span>
+  - title: 【建筑】我的哈工大
+    link: /servers/HIT-IN-MC/
+    details:
+        <a href="/servers/HIT-IN-MC/index">介绍</a><br>
 
 ---
 

@@ -38,7 +38,7 @@ inclyc    HighIQ666
 
 #### 第一种方法
 
-![img](./join_image/join1.png)
+![img](./join1.png)
 
 将此按钮拖动至启动器即可。
 
@@ -46,15 +46,15 @@ inclyc    HighIQ666
 
 ##### pcl2
 
-![img](./join_image/join2.png)
-![img](./join_image/join3.png)
+![img](./join2.png)
+![img](./join3.png)
 
 **注册链接空着不用写**
 
 ##### hmcl
 
-![img](./join_image/join4.png)
-![img](./join_image/join5.png)
+![img](./join4.png)
+![img](./join5.png)
 
 按次序编辑内容即可。
 配置完成后，输入你在`hitmc.cc`中注册的账号密码，即可完成启动器端认证登录配置。
