@@ -62,7 +62,7 @@
 
 服务器重启后，假人自动加入服务器（即不会消失）
 
-#### `fakePlayerAutoReplenishment true`
+#### `fakePlayerAutoReplenishment false`
 
 `gca`
 
