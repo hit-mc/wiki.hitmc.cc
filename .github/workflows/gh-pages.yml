@@ -36,7 +36,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18.17.1 # Match the Node.js version from your original configuration
+          node-version: 22
           # cache: 'pnpm' # Set cache for pnpm
 
       - name: Setup pnpm
