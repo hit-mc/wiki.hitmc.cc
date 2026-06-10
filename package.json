@@ -14,10 +14,5 @@
   "license": "ISC",
   "devDependencies": {
     "vitepress": "^1.6.4"
-  },
-  "pnpm": {
-    "overrides": {
-      "esbuild": "0.27.2"
-    }
   }
 }
