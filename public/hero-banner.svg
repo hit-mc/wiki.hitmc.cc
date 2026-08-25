@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 560 560" width="560" height="560">
+  <!--
+    齿轮（8 个底宽顶窄的梯形齿，根部嵌入主体环无缝隙）+ 草方块 + 白色圆环轨道 + 黄色卫星。
+    - 草方块 scale 5.9：外接圆 r≈132，比齿轮内圈 r140 小约 8px。
+    - 轨道 rx240/ry95（原始大小），外沿 r240 仍在齿顶 r250 之内。
+    - 齿轮为单一颜色（齿与本体同色）。
+    - 精确遮挡：卫星圆盘(r16)与草方块轮廓首末接触 → t∈[0.645,0.825] 在方块背后。
+    - 动画：齿轮自转(20s)、卫星公转(8s)、整体上下浮动(5s，顶部不截断)。
+  -->
+  <defs>
+    <linearGradient id="grassTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7ed957"/>
+      <stop offset="100%" stop-color="#5cb83f"/>
+    </linearGradient>
+    <linearGradient id="dirtLeft" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9a7846"/>
+      <stop offset="100%" stop-color="#7d5f38"/>
+    </linearGradient>
+    <linearGradient id="dirtRight" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8a6a3e"/>
+      <stop offset="100%" stop-color="#6f5330"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 梯形齿轮齿：底宽 90（r150，嵌入主体环），顶宽 60（r230），沿 +y 指向外 -->
+    <path id="tooth" d="M -45 150 L 45 150 L 30 230 L -30 230 Z" fill="#a7a8ae"/>
+
+    <!-- 卫星外观（正/背面两球共用） -->
+    <g id="satellite">
+      <circle r="16" fill="#ffd23f" stroke="#e0b53a" stroke-width="2"/>
+      <circle cy="-5" r="5" fill="#fff6c8"/>
+    </g>
+
+    <!-- 公转轨道（rx240 ry95 倾-16°，供两个 animateMotion 复用） -->
+    <path id="orbit"
+      d="M 510.7 198.9 A 240 95 -16 1 1 49.3 331.1 A 240 95 -16 1 1 510.7 198.9 Z"/>
+  </defs>
+
+  <!-- 整体缓慢上下浮动（最大上移 14，齿顶 y=15 不会被截断） -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,-4;0,-14;0,-4" dur="3s" repeatCount="indefinite"/>
+
+    <ellipse cx="280" cy="265" rx="250" ry="210" fill="url(#glow)"/>
+
+    <!-- 齿轮（缓慢自转）：主体环 + 内圈 + 8 个梯形齿（齿画在环上，根部无缝隙） -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0 280 265" to="360 280 265" dur="20s" repeatCount="indefinite"/>
+      <!-- 主体环（r145~195） -->
+      <circle cx="280" cy="265" r="170" fill="none" stroke="#a7a8ae" stroke-width="50"/>
+      <!-- 内圈（r140） -->
+      <circle cx="280" cy="265" r="140" fill="#3a3b43"/>
+      <!-- 齿（根部 r150 嵌入主体环，向圆心增高，无空隙） -->
+      <g transform="translate(280,265)">
+        <use href="#tooth" transform="rotate(0)"/>
+        <use href="#tooth" transform="rotate(45)"/>
+        <use href="#tooth" transform="rotate(90)"/>
+        <use href="#tooth" transform="rotate(135)"/>
+        <use href="#tooth" transform="rotate(180)"/>
+        <use href="#tooth" transform="rotate(225)"/>
+        <use href="#tooth" transform="rotate(270)"/>
+        <use href="#tooth" transform="rotate(315)"/>
+      </g>
+    </g>
+
+    <!-- 圆环后半段（方块后） -->
+    <path d="M 49.3 331.1 A 240 95 -16 0 1 510.7 198.9"
+      fill="none" stroke="#cfcfd4" stroke-width="14" stroke-linecap="round"/>
+
+    <!-- 背面球（方块下层）：t∈[0.651,0.815] 被方块遮挡时显示 -->
+    <g>
+      <use href="#satellite" xlink:href="#satellite"/>
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.645;0.645;0.825;0.825;1" dur="8s" repeatCount="indefinite"/>
+      <animateMotion dur="8s" repeatCount="indefinite">
+        <mpath href="#orbit" xlink:href="#orbit"/>
+      </animateMotion>
+    </g>
+
+    <!-- 草方块（居中，外接圆略小于内圈） -->
+    <g transform="translate(280,265) scale(5.9)">
+      <polygon points="0,-20 20,-10 0,0 -20,-10" fill="url(#grassTop)"/>
+      <polygon points="-20,-10 0,0 0,20 -20,10" fill="url(#dirtLeft)"/>
+      <polygon points="-20,-10 0,0 0,6 -20,-4" fill="#4d9e3a"/>
+      <polygon points="20,-10 0,0 0,20 20,10" fill="url(#dirtRight)"/>
+      <polygon points="20,-10 0,0 0,6 20,-4" fill="#3f8f33"/>
+    </g>
+
+    <!-- 圆环前半段（方块前，与后半段同色同宽） -->
+    <path d="M 510.7 198.9 A 240 95 -16 0 1 49.3 331.1"
+      fill="none" stroke="#cfcfd4" stroke-width="14" stroke-linecap="round"/>
+
+    <!-- 正面球（最上层）：其余时间显示 -->
+    <g>
+      <use href="#satellite" xlink:href="#satellite"/>
+      <animate attributeName="opacity" values="1;1;0;0;1;1" keyTimes="0;0.645;0.645;0.825;0.825;1" dur="8s" repeatCount="indefinite"/>
+      <animateMotion dur="8s" repeatCount="indefinite">
+        <mpath href="#orbit" xlink:href="#orbit"/>
+      </animateMotion>
+    </g>
+  </g>
+</svg>
