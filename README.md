@@ -63,6 +63,10 @@ const sidebars: DefaultTheme.SidebarItem[] = [
 > 
 > pnpm install
 > 
-> npm run docs:dev
+> pnpm run docs:dev
 > 
 > 然后在浏览器输入所给出的地址
+
+## 主题配置
+
+站点使用了 **vitepress-theme-teek** 主题，主题相关配置（博主、页脚、社交、主题色、首页/文章页样式等）统一放在 **`.vitepress/teek-config.ts`**（`.vitepress/config.mts` 里 `extends: teekConfig` 引入）。想改主题外观、色板、文章页样式等，改这个文件即可；导航与侧边栏仍按上面的方式在 `config.mts` / `.vitepress/sidebars` 里配置。
