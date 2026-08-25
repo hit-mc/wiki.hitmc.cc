@@ -13,6 +13,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vitepress": "^1.6.4"
+    "sass": "^1.103.1",
+    "vitepress": "1.6.4",
+    "vitepress-theme-teek": "1.6.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "vitepress": "1.6.4"
+    }
   }
 }
