@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress';
+import { teekConfig } from './teek-config';
 import sidebarVan from './sidebars/van.mts';
 import sidebarBlog from './sidebars/blog.mts';
 import sidebarPermod from './sidebars/mod_permanent.mts';
@@ -7,8 +8,13 @@ import sidebarKit from './sidebars/Kit_servers.mts';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+    // Teek 全局配置（blogger、footer、社交等），提供主题增强
+    extends: teekConfig,
+
     title: "HITMC Wiki",
     description: "A wiki site for HITMC",
+    lang: 'zh-CN',
+
     themeConfig: {
         outline: {
             level: [2, 4],
@@ -21,9 +27,7 @@ export default defineConfig({
             { text: '常驻 mod 服', link: '/servers/mod_permanent/' },
             { text: '插件服', link: '/servers/Kit_servers/' },
             { text: '我的哈工大', link: '/servers/HIT-IN-MC/' },
-            //{ text: '历史周目', link: '/servers/old/' },
             { text: '博客', link: '/blog/' },
-            //{ text: '关于', link: '/blog/' },
         ],
 
         sidebar: {
@@ -32,15 +36,6 @@ export default defineConfig({
             "/servers/mod_permanent/": sidebarPermod,
             "/servers/mod_rotation/": sidebarMod,
             "/servers/Kit_servers/": sidebarKit,
-            //"/servers/old/": [],
-            // "/about": [
-            //     {
-            //         items: [
-            //             { text: '关于', link: '/about/index' },
-            //             { text: '历史周目', link: '/about/servers' }
-            //         ]
-            //     }
-            // ],
         },
 
         socialLinks: [

@@ -1,0 +1,230 @@
+/* =====================================================================
+ * 自定义壁纸 / 玻璃 / 交互（复用自 unused_theme 的玻璃拟态主题风格），
+ * 颜色改用 --vp-c-brand-* / --vp-c-brand-soft（兼容性更好，不依赖 color-mix），
+ * 选中主题色时仍会联动；明暗双模式。
+ * ===================================================================== */
+
+/* 让 Teek 的内容背景半透明，使 body 渐变透出（玻璃感） */
+:root {
+  --vp-c-bg: rgba(255, 255, 255, 0);
+  --vp-c-bg-alt: rgba(255, 255, 255, 0.45);
+  --vp-c-bg-elv: rgba(255, 255, 255, 0.6);
+  --vp-c-bg-soft: rgba(255, 255, 255, 0.5);
+  /* 导航栏：.VPNavBar 一层玻璃白；.content-body 用透明，避免双层叠加色差 */
+  --vp-nav-bg-color: transparent;
+  --vp-nav-screen-bg-color: transparent;
+  --vp-local-nav-bg-color: transparent;
+  --vp-sidebar-bg-color: rgba(255, 255, 255, 0.45);
+}
+html.dark {
+  --vp-c-bg: rgba(20, 20, 30, 0);
+  --vp-c-bg-alt: rgba(28, 28, 42, 0.55);
+  --vp-c-bg-elv: rgba(32, 32, 48, 0.65);
+  --vp-c-bg-soft: rgba(28, 28, 42, 0.55);
+  --vp-nav-bg-color: transparent;
+  --vp-nav-screen-bg-color: transparent;
+  --vp-local-nav-bg-color: transparent;
+  --vp-sidebar-bg-color: rgba(22, 22, 36, 0.55);
+}
+
+/* ---- 主页背景：浅色毛玻璃底 + 朦胧色块缓慢流动（色块见 AmbientBlobs 组件） ---- */
+body {
+  background-color: #eef2ff;
+}
+html.dark body {
+  background-color: #16162a;
+}
+
+/* ---- 玻璃质感：顶栏 / 正文 / 侧边栏 ---- */
+.VPNavBar {
+  background: rgba(255, 255, 255, 0.62) !important;
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+/* 兜底：导航栏内部（含 content / content-body，覆盖 card/segment 等布局）全部透明，
+   只保留 .VPNavBar 一层玻璃白，避免内部再叠一层底色导致色差 */
+.VPNavBar .container > .content,
+.VPNavBar .container > .content .content-body,
+.VPNavBar .content-body {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+html.dark .VPNavBar {
+  background: rgba(24, 24, 38, 0.66) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+.VPSidebar {
+  background: rgba(255, 255, 255, 0.45) !important;
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+}
+html.dark .VPSidebar {
+  background: rgba(22, 22, 36, 0.55) !important;
+}
+
+/* ---- 首页 features 卡片里的胶囊标签 ---- */
+.index-tags {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.index-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--vp-c-brand-soft);
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+/* ---- 按钮 hover 跳起动画（光晕用 --vp-c-brand-soft） ---- */
+.VPButton.brand,
+.VPButton.alt {
+  border-radius: 999px !important;
+  transition: transform 0.5s cubic-bezier(0.22, 0.9, 0.35, 1),
+    box-shadow 0.5s ease !important;
+}
+.VPButton.brand {
+  box-shadow: 0 6px 20px var(--vp-c-brand-soft) !important;
+}
+.VPButton.alt {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.VPButton.brand:hover,
+.VPButton.alt:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 28px var(--vp-c-brand-soft) !important;
+}
+
+/* ---- 首页 6 个大按钮（features 卡片）：毛玻璃 + 悬停光晕 ---- */
+.VPFeature {
+  border-radius: 18px !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  box-shadow: 0 10px 30px var(--vp-c-brand-soft),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+  transition: transform 0.6s cubic-bezier(0.22, 0.9, 0.35, 1),
+    box-shadow 0.5s ease, background 0.5s ease, border-color 0.5s ease !important;
+}
+.VPFeature:hover {
+  transform: translateY(-8px) !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  border-color: var(--vp-c-brand-soft) !important;
+  /* 悬停光晕：品牌色外圈描边 + 大范围发光 */
+  box-shadow:
+    0 0 0 1px var(--vp-c-brand-soft),
+    0 18px 50px var(--vp-c-brand-soft),
+    0 0 40px var(--vp-c-brand-soft) !important;
+}
+html.dark .VPFeature {
+  background: rgba(40, 40, 60, 0.5) !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+}
+
+/* =====================================================================
+ * 首页 hero SVG 位置微调（改下面数值即可，改完刷新）
+ *   index.md 里 hero.image.src 指定用哪张图（/hero-banner.svg）
+ * ===================================================================== */
+.VPHero .image-container {
+  transform: translate(-32px, -32px) !important;
+}
+.VPHero .image-src {
+  max-width: 320px !important;
+  max-height: 320px !important;
+  top: 65% !important;
+  left: 70% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+/* =====================================================================
+ * 隐藏滚动条（页面 + 侧边栏 + 代码块等所有位置），
+ * 仅隐藏视觉滚动条，不影响滚轮 / 触摸 / 键盘滚动。
+ * ===================================================================== */
+html {
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE / Edge */
+}
+html::-webkit-scrollbar {
+  display: none;               /* Chrome / Safari */
+  width: 0;
+  height: 0;
+}
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* =====================================================================
+ * 去掉侧边栏底部的白色淡出帘（.aside-curtain，用于可滚动提示），
+ * 它与流动/玻璃背景割裂，直接隐藏。
+ * ===================================================================== */
+.aside-curtain {
+  display: none !important;
+}
+
+/* =====================================================================
+ * 文章页圆角加大（覆盖所有布局模式）
+ * ===================================================================== */
+.VPDoc .container > .content,
+.VPDoc .content-container,
+.VPDoc .aside .aside-container .aside-content,
+.VPDoc .aside .aside-container .aside-content .content {
+  border-radius: 24px !important;
+}
+
+/* =====================================================================
+ * 页脚社交图标：iconfont 字体文件缺失，改用内联 SVG 蒙版显示（跟随文本色）
+ * ===================================================================== */
+.tk-icon.icon-github,
+.iconfont.icon-github {
+  background-color: currentColor !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat center / contain !important;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat center / contain !important;
+}
+.tk-icon.icon-github:before,
+.iconfont.icon-github:before {
+  content: none !important;
+}
+
+
+/* =====================================================================
+ * Hero 标题渐变文字（复用自 unused_theme）
+ * ===================================================================== */
+:root {
+  /* 渐变：同一主题色，主色(饱和) → light-5，跨度适中且保留饱和度，完全跟随主题 */
+  --hm-grad: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-brand-3));
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: var(--hm-grad);
+}
+.VPHero .name,
+.VPHero .heading .name {
+  background: var(--hm-grad) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* =====================================================================
+ * Hero 图片：淡入 + 主题色投影（复用自 unused_theme ②）
+ * ===================================================================== */
+.VPHero .image-src {
+  filter: drop-shadow(0 20px 70px var(--vp-c-brand-soft))
+    drop-shadow(0 8px 34px var(--vp-c-brand-soft)) !important;
+  animation: hm-hero-in 1.2s ease both !important;
+}
+@keyframes hm-hero-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

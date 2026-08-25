@@ -5,7 +5,10 @@ layout: home
 hero:
   name: "HITMC Wiki"
   text: "A wiki site for HITMC"
-  # tagline: My great project tagline
+  tagline: "哈工大 Minecraft 服务器 · 文档 / 攻略 / 博客"
+  image:
+    src: /hero-banner.svg
+    alt: HITMC Wiki 动画横幅
   actions:
     - theme: brand
       text: 皮肤站
@@ -56,23 +59,3 @@ features:
     details:
         <a href="/servers/HIT-IN-MC/index">介绍</a><br>
 
----
-
-<style>
-  .index-tags {
-      margin: 0;
-      margin-bottom: 0.5em;
-      font-size: 0;
-  }
-  .index-tag {
-    /* background-color: white; */
-    padding: 4px 8px;
-    margin-right: 4px;
-    border-radius: 4px;
-    border: 1px solid #eaeaea;
-    font-size: 12px;
-    line-height: 12px;
-    /* width: fit-content; */
-    display: inline-block;
-  }
-</style>
